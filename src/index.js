@@ -5,12 +5,18 @@ import App from "./App";
 // eslint-disable-next-line import/order
 import { BrowserRouter } from "react-router-dom";
 
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
+  // <Provider store={{}}>
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  // </Provider>
+  ,
   document.getElementById("root")
 );
 

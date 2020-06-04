@@ -19,7 +19,6 @@ const Auth = ({ type, onChangeLoginState, isLogin }) => {
 
   useEffect(() => {
     return () => {
-      console.log('@@@@ auth destroy');
       dispatch({
         type: types.AUTH_DESTROY
       });

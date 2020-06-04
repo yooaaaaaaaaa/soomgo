@@ -1,0 +1,30 @@
+
+/* 스마트폰 가로+세로 */
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+}
+
+/* 스마트폰 가로 */
+@media only screen and (min-width : 321px) {
+}
+
+/* 스마트폰 세로 */
+@media only screen and (max-width : 320px) {
+}
+
+/* 데스크탑 브라우저 가로 */
+@media only screen and (min-width : 1224px) {
+}
+
+/* 큰 모니터 */
+@media only screen and (min-width : 1824px) {
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}

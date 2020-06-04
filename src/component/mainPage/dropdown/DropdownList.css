@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+.tag_wrapper {
+
+
+}
+
+
+.tag_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tag_vibes {
+    display: flex;
+    justify-content: center;
+}
+
+
+.tag_vibes .tag_vibes_text {
+    margin-right: 10px;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.tag_dropdown {
+    font-size: 17px;
+    border: none;
+    background-color: #fafafa;
+    text-align-last:center;
+    margin-right: 15px;
+
+}
+
+
+.tag_button button {
+    border: none;
+    font-size: 25px;
+    font-weight: 600;
+}

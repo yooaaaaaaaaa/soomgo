@@ -1,0 +1,10 @@
+
+.write_rating input[type='radio']{
+    display: none;
+}
+
+.star{
+    cursor: pointer;
+    transition: color 200ms;
+    color: #b2b2b2;
+}

@@ -1,0 +1,48 @@
+
+
+$red:#c0392b;
+$orange:#f39c12;
+$green:#16a085;
+$blue:#2980b9;
+$gray:#7f8c8d;
+
+$white:#f2f2f2;
+$black:#0D0D0D;
+$skyblue:#8A9EA6;
+$beige:#D9AF8B;
+$pink:#BF9393;
+
+$basicFont:#2c3e50;
+
+
+
+
+//1
+@mixin Link($color){
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+  display: block;
+  color: $color;
+}
+
+/*mixin 이용법
+link {@include icon(blue)}
+*/
+
+
+
+//2
+@mixin icon($word){
+  text-decoration: none;
+  display: block;
+  @if $word == 'a'{
+    color: #2c3e50;
+  }@else{
+  color: #7f8c8d;
+}
+}
+
+/*mixin 이용법
+link {@include icon('a')}
+*/

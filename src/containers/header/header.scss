@@ -1,0 +1,174 @@
+@import '../../style/utils.scss';
+@import "../../style/reset.scss";
+
+
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    width: 100%;
+
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.header{
+    display: flex;
+    background-color: $white;
+
+    a {
+        @include Link($black)
+    }
+}
+
+.header_search{
+    display: flex;
+    .header_search_icon{
+        margin-top: 1rem;
+    }
+}
+
+.header_menu{
+
+}
+
+@media screen and (min-width:1200px) {
+max-width: 960px;
+}
+
+
+/*
+ <Link to="/" className="header_name">
+            사이트 이름
+          </Link>
+          <div className="header_search">
+            <input
+              placeholder="영화 제목, 아이디"
+              onChange={this.handleChange}
+              value={search}
+            />
+            <Link className="header_search_icon" to="/DiaryDataContainer">
+              <FaSearch />
+            </Link>
+          </div>
+          <div className="header_menu">
+            <Link className="header_write" to="/SearchMovieContainer">
+              <FaEdit />
+              <span>Write</span>
+            </Link>
+            <Link className="header_myPage" to="/MyPageContainer">
+              <FaHeart />
+              <span>MyPage</span>
+            </Link>
+            <Link className="header_login" to="/Login">
+              <FaUserCircle />
+              {isLogin ? MyAccount.nickname : "Login"}
+            </Link>
+            </div>
+
+*/
+
+/*
+ <Table>
+        <TableHead>
+          <TableRow className="header">
+            <TableCell>
+              <Link to="/" className="header_name">
+                사이트 이름
+              </Link>
+            </TableCell>
+            <TableCell>
+              <div className="header_search">
+                <input
+                  placeholder="영화 제목, 아이디"
+                  onChange={this.handleChange}
+                  value={search}
+                />
+                <Link
+                  className="header_search_icon"
+                  to="/DiaryDataContainer"
+                >
+                  <FaSearch />
+                </Link>
+              </div>
+            </TableCell>
+            <TableCell>
+              <div className="header_menu">
+                <Link className="header_write" to="/SearchMovieContainer">
+                  <FaEdit />
+                  <span>Write</span>
+                </Link>
+                <Link className="header_myPage" to="/MyPageContainer">
+                  <FaHeart />
+                  <span>MyPage</span>
+                </Link>
+                <Link className="header_login" to="/Login">
+                  <FaUserCircle />
+                  {isLogin ? MyAccount.nickname : "Login"}
+                </Link>
+              </div>
+            </TableCell>
+          </TableRow>
+        </TableHead>
+      </Table>*/
+
+/*class Header extends Component {
+    state = {
+    search: "",
+};
+
+    handleChange = (e) => {
+    this.setState({
+    search: e.target.value,
+});
+};
+
+render() {
+    const { search } = this.state;
+    const { isLogin } = this.props;
+    return (
+    <section>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6" style={{ flex: 1 }}>
+Static Website
+</Typography>
+<div className="header_search">
+<input
+placeholder="영화 제목, 아이디"
+onChange={this.handleChange}
+    value={search}
+/>
+<Link className="header_search_icon" to="/DiaryDataContainer">
+<FaSearch />
+</Link>
+</div>
+<div className="header_menu">
+<Link className="header_write" to="/SearchMovieContainer">
+<FaEdit />
+<span>Write</span>
+</Link>
+<Link className="header_myPage" to="/MyPageContainer">
+<FaHeart />
+<span>MyPage</span>
+</Link>
+<Link className="header_login" to="/Login">
+<FaUserCircle />
+{isLogin ? MyAccount.nickname : "Login"}
+</Link>
+</div>
+</Toolbar>
+</AppBar>
+</section>
+);
+}
+}
+
+export default Header;*/

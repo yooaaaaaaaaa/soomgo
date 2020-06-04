@@ -5,17 +5,23 @@ import App from "./App";
 // eslint-disable-next-line import/order
 import { BrowserRouter } from "react-router-dom";
 
-import { Provider } from 'react-redux';
+import reducers from './reducers';
 import { createStore, applyMiddleware, compose } from 'redux';
+import { Provider } from 'react-redux';
+
+const middlewares = [];
+
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducers, composeEnhancers(applyMiddleware(...middlewares)));
 
 ReactDOM.render(
-  // <Provider store={{}}>
+  <Provider store={store}>
     <React.StrictMode>
       <BrowserRouter>
         <App />
       </BrowserRouter>
     </React.StrictMode>
-  // </Provider>
+  </Provider>
   ,
   document.getElementById("root")
 );

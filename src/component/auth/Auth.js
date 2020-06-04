@@ -1,30 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from 'react-redux';
 import MyAccount from "../../tool/MyAccount";
 import { NetTool, APIs } from "../../tool/NetTool";
 import { Link } from "react-router-dom";
+import * as types from '../../actions';
 
 const textMap = {
   login: "로그인",
   register: "회원가입",
 };
+
 const Auth = ({ type, onChangeLoginState, isLogin }) => {
+  const { auth } = useSelector(state => state);
+  const dispatch = useDispatch();
+  console.log('@@@@ render auth: ', auth);
+  const { email, pwd, nickname, passwordConfirm } = auth.form;
   const text = textMap[type];
 
-  const [form, setForm] = useState({
-    email: "",
-    pwd: "",
-    nickname: "",
-    passwordConfirm: "",
-  });
-
-  const { email, pwd, nickname, passwordConfirm } = form;
+  useEffect(() => {
+    return () => {
+      console.log('@@@@ auth destroy');
+      dispatch({
+        type: types.AUTH_DESTROY
+      });
+    }
+  }, []);
 
   const onChange = (e) => {
-    const nextForm = {
-      ...form,
-      [e.target.name]: e.target.value,
-    };
-    setForm(nextForm);
+    console.log('e.target.name: ', e.target.name);
+    dispatch({
+      type: types.AUTH_SET_FORM,
+      data: {
+        key: e.target.name,
+        value: e.target.value
+      }
+    });
   };
 
   const onSubmit = (e) => {
@@ -34,7 +44,6 @@ const Auth = ({ type, onChangeLoginState, isLogin }) => {
   // 이메일 주소로 로그인 하기.
   const clickLogin = () => {
     // 필수 email, pwd
-
     NetTool.request(APIs.userLogin)
       .appendFormData("email", email) // 필수
       .appendFormData("pwd", pwd) // 필수
@@ -141,10 +150,10 @@ const Auth = ({ type, onChangeLoginState, isLogin }) => {
           {type === "login" ? (
             <Link to="/register">회원가입</Link>
           ) : (
-            <Link onClick={clickJoin} to="/">
-              로그인
-            </Link>
-          )}
+              <Link onClick={clickJoin} to="/">
+                로그인
+              </Link>
+            )}
         </footer>
       </form>
     </div>

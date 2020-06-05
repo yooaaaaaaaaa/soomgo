@@ -2,6 +2,7 @@
 
 다른 사람의 소스에 사용되는 state 를 확인하려면 해당 js 파일 위치를 찾고 -> 해당 소스 열고 -> constructor 확인
 <img src="./public/intro/2.png">
+
 이 부분이 너무 귀찮다는 생각
 
 <img src="./public/intro/4.png">
@@ -14,7 +15,7 @@ redux 를 사용하게 되면서 해당 모듈 혹은 컴포넌트에 필요한 
 <img src="./public/intro/1.png">
 
 ---
-저희 프로젝트 기준으로 디자인이 반응형으로 디자인이 나오지 않아 한페이지 PC, MOBILE 다른 컴포넌트로 두 벌 구성
+저희 프로젝트 기준으로 디자인이 반응형으로 디자인이 나오지 않아 개발자들끼리 논의 결과로 한페이지 PC, MOBILE 다른 컴포넌트로 두 벌 구성
 
 <img src="./public/intro/3.png">
 

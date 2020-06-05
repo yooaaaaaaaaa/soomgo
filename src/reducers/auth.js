@@ -1,4 +1,7 @@
-import * as types from '../actions';
+import { createAction, handleActions } from 'redux-actions';
+
+const SET_FORM = 'auth/SET_FORM';
+const DESTROY = 'auth/DESTROY'
 
 const initialState = {
   form: {
@@ -9,21 +12,20 @@ const initialState = {
   }
 };
 
-const auth = (state = initialState, action) => {
-  switch (action.type) {
-    case types.AUTH_SET_FORM:
-      return {
-        ...state,
-        form: {
-          ...state.form,
-          [action.data.key]: action.data.value
-        }
-      };
-    case types.AUTH_DESTROY:
-      return initialState;
-    default:
-      return state;
-  }
-}
+export const setForm = createAction(SET_FORM);
+export const destroy = createAction(DESTROY);
 
-export default auth;
+export default handleActions({
+  [SET_FORM]: (state, action) => {
+    console.log('@@@@ state: ', state);
+    console.log('@@@@ action: ', action);
+    return {
+      ...state,
+      form: {
+        ...state.form,
+        [action.payload.key]: action.payload.value
+      }
+    }
+  },
+  [DESTROY]: (state, action) => initialState
+}, initialState);

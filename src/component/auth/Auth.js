@@ -4,6 +4,7 @@ import MyAccount from "../../tool/MyAccount";
 import { NetTool, APIs } from "../../tool/NetTool";
 import { Link } from "react-router-dom";
 import * as types from '../../actions';
+import * as actions from '../../reducers/auth';
 
 const textMap = {
   login: "로그인",
@@ -19,21 +20,25 @@ const Auth = ({ type, onChangeLoginState, isLogin }) => {
 
   useEffect(() => {
     return () => {
-      dispatch({
-        type: types.AUTH_DESTROY
-      });
+      dispatch(actions.destroy());
     }
   }, []);
 
   const onChange = (e) => {
     console.log('e.target.name: ', e.target.name);
-    dispatch({
-      type: types.AUTH_SET_FORM,
-      data: {
+    // dispatch({
+    //   type: types.AUTH_SET_FORM,
+    //   data: {
+    //     key: e.target.name,
+    //     value: e.target.value
+    //   }
+    // });
+    dispatch(
+      actions.setForm({
         key: e.target.name,
         value: e.target.value
-      }
-    });
+      })
+    );
   };
 
   const onSubmit = (e) => {
